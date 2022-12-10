@@ -1,174 +1,146 @@
-html, body{
-    min-height: 100vh;
-    overflow-x: hidden;
+body,html{
+    min-height:100vh;
+    overflow-x:hidden
 }
-
-a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20pt;
-    font-weight: 400;
-    transition: 0.25s;
+a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20pt;
+    font-weight:400;
+    transition:.25s
 }
-
-a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    text-shadow: 0 0 10px #ffffff;
+a:hover{
+    color:#fff;
+    text-decoration:underline;
+    text-shadow:0 0 10px #fff
 }
-
-.link-container {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 20px; 
+.link-container{
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+    gap:20px
 }
-
-body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    margin: 0;
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+body{
+    background-color:#000;
+    color:#fff;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:14px;
+    line-height:1.42857143;
+    margin:0;
+    background-repeat:no-repeat;
+    background-size:cover
 }
-
-.gradient1 {
-    background: rgb(205,122,195);
-    background: radial-gradient(circle, rgb(134, 122, 205) 0%, rgba(0,13,99,0) 100%);
-    position: absolute;
-    z-index: -1;
-    filter: blur(100px);
-    width: 700px;
-    height: 700px;
-    bottom: -100px;
-    right: -100px;
-    opacity: 0.25;
+.gradient1{
+    background:#cd7ac3;
+    background:radial-gradient(circle,#867acd 0,rgba(0,13,99,0) 100%);
+    position:absolute;
+    z-index:-1;
+    filter:blur(100px);
+    width:700px;
+    height:700px;
+    bottom:-100px;
+    right:-100px;
+    opacity:.25
 }
-
-.gradient2 {
-    background: rgb(205,122,195);
-    background: radial-gradient(circle, rgba(205,122,195,1) 0%, rgba(0,13,99,0) 100%);
-    position: absolute;
-    z-index: -1;
-    filter: blur(100px);
-    width: 700px;
-    height: 700px;
-    top: -100px;
-    left: -100px;
-    opacity: 0.25;
+.gradient2{
+    background:#cd7ac3;
+    background:radial-gradient(circle,rgba(205,122,195,1) 0,rgba(0,13,99,0) 100%);
+    position:absolute;
+    z-index:-1;
+    filter:blur(100px);
+    width:700px;
+    height:700px;
+    top:-100px;
+    left:-100px;
+    opacity:.25
 }
-
-.gradient3 {
-    background: rgb(205,122,195);
-    background: radial-gradient(circle, rgb(255, 4, 79) 0%, rgba(0,13,99,0) 100%);
-    position: absolute;
-    z-index: -1;
-    filter: blur(100px);
-    width: 700px;
-    height: 700px;
-    bottom: -100px;
-    left: -100px;
-    opacity: 0.25;
+.gradient3{
+    background:#cd7ac3;
+    background:radial-gradient(circle,#ff044f 0,rgba(0,13,99,0) 100%);
+    position:absolute;
+    z-index:-1;
+    filter:blur(100px);
+    width:700px;
+    height:700px;
+    bottom:-100px;
+    left:-100px;
+    opacity:.25
 }
-
-.gradient4 {
-    background: rgb(205,122,195);
-    background: radial-gradient(circle, rgb(20, 22, 158) 0%, rgba(0,13,99,0) 100%);
-    position: absolute;
-    z-index: -1;
-    filter: blur(100px);
-    width: 700px;
-    height: 700px;
-    top: -100px;
-    right: -100px;
-    opacity: 0.25;
+.gradient4{
+    background:#cd7ac3;
+    background:radial-gradient(circle,#14169e 0,rgba(0,13,99,0) 100%);
+    position:absolute;
+    z-index:-1;
+    filter:blur(100px);
+    width:700px;
+    height:700px;
+    top:-100px;
+    right:-100px;
+    opacity:.25
 }
-
-#fieldset-blur {
-    width: 100%;
-    height: calc(100% + 50px/2);
-    position: absolute;
-
-    transform: translateY(calc(-50px/2));
-
-    border: none;
-    background: rgba( 30, 29, 29, 0.15 );
-    border-radius: 11.25px;
-
-    box-shadow: 0 8px 32px 0 rgba(0, 1, 2, 0.3);
-    backdrop-filter: blur( 48px );
-
-    left: 0;
-    top: 0;
-
-    z-index: -1;
+#fieldset-blur{
+    width:100%;
+    height:calc(100% + 50px/2);
+    position:absolute;
+    transform:translateY(calc(-50px/2));
+    border:none;
+    background:rgba(30,29,29,.15);
+    border-radius:11.25px;
+    box-shadow:0 8px 32px 0 rgba(0,1,2,.3);
+    backdrop-filter:blur( 48px );
+    left:0;
+    top:0;
+    z-index:-1
 }
-
-.clock-container-container {
-    border: #ffffff 3px;
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 18px;
-
-    /* Glass Effect */
-    
-    border-radius: 12px;
-    border: 1px solid rgba( 255, 255, 255, 0.2);
+.clock-container-container{
+    border:#fff 3px;
+    display:flex;
+    padding:20px;
+    align-items:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.2)
 }
-
-#clock-container {
-    background: rgba( 30, 29, 29, 0.15 );
-    height: 50px;
-    width: 180px;
-
-    color: #ffffff;
-    font-size: 28pt;
-    font-weight: 700;
-
-    /* Glass Effect */
-    box-shadow: 0 8px 32px 0 rgba(0, 1, 2, 0.3);
-    backdrop-filter: blur( 6px );
-    border-radius: 12px;
-    border: 1px solid rgba( 255, 255, 255, 0.2);
-
-    /* Flexbox stuff */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#clock-container{
+    background:rgba(30,29,29,.15);
+    height:50px;
+    width:180px;
+    color:#fff;
+    font-size:28pt;
+    font-weight:700;
+    box-shadow:0 8px 32px 0 rgba(0,1,2,.3);
+    backdrop-filter:blur( 6px );
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.2);
+    display:flex;
+    justify-content:center;
+    align-items:center
 }
-
-.clock {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    background-color: #333333;
-    min-width: none;
-    min-height: none;
-    border-radius: 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
+.clock{
+    font-size:2rem;
+    font-weight:700;
+    text-align:center;
+    margin:0;
+    background-color:#333;
+    min-width:none;
+    min-height:none;
+    border-radius:40px;
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translate(-50%,-50%)
 }
-
-.flip {
-    transform: scaleY(-1);
+.flip{
+    transform:scaleY(-1)
 }
-
-@media screen and (max-width: 768px) {
-    .clock-container {
-        height: 25px;
-        width: 90px;
-        font-size: 13pt;
-        border-radius: 6px;
-        transform: translateY(120%);
+@media screen and (max-width:768px){
+    .clock-container{
+        height:25px;
+        width:90px;
+        font-size:13pt;
+        border-radius:6px;
+        transform:translateY(120%)
     }
 }
