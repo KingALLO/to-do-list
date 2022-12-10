@@ -7,9 +7,12 @@
     <title>To-Do by Allo</title>
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="tasks.css">
     <script type="text/javascript" src="clock.js" defer></script>
 </head>
 <body>
+    <!-- Begin top bar -->
     <fieldset class="clock-container-container flip">
         <div id="fieldset-blur"></div>
         <div class="flip link-container">
@@ -22,11 +25,36 @@
             <p id="clock"></p>
         </legend>
     </fieldset>
+    <!-- End top bar -->
 
+    <!-- Background stuff -->
     <div class="gradient1"></div>
     <div class="gradient2"></div>
     <div class="gradient3"></div>
     <div class="gradient4"></div>
+    <!-- End Background stuff -->
+
+    <!-- Begin main content -->
+
+    <!-- Begin task list -->
+    <div id="add-container">
+        <div id="newtask">
+            <input type="text" id="newtask-input" placeholder="Add a new task...">
+            <button id="newtask-button">Add</button>
+        </div>
+    </div>
+
+    <main>
+        <h1>Tasks:</h1>
+        <div id="tasks-container"></div>
+    </main>
+
+    <div id="task-list">
+        <div class="task">
+            <p class="task-name">Hello</p>
+        </div>
+    </div>
+    <script src="taskList.js"></script>
 
 </body>
 </html>
