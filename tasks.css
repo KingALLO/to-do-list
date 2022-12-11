@@ -176,3 +176,31 @@
     box-shadow: #f5a52a 0 3px 7px inset;
     transform: translateY(2px);
 }
+
+@media screen and (max-width:768px){
+    .task-date, .task-priority, .task-due {
+        display: none;
+    }
+    .delete-and-edit {
+        gap: 5px;
+    }
+    .delete-button, .edit-button {
+        width: 2.5rem;
+        font-size: 14pt;
+    }
+    .task-name, .task-time-left {
+        font-size: 12pt;
+    }
+    .task, #add-container, .clock-container-container {
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    #fieldset-blur {
+        border-radius: 0;
+    }
+    #clock-container {
+        display: none;
+    }
+}
