@@ -56,7 +56,7 @@ function addClick() {
         // Add the time, that is left until the due date TODO!!!!!!!!
         const newTaskTimeLeft = document.createElement("p");
         newTaskTimeLeft.classList.add("task-time-left");
-        //newTaskTimeLeft.innerText = "1 week";
+        newTaskTimeLeft.innerText = "1 week";
         newTask.appendChild(newTaskTimeLeft);
 
         // Add the span, that contains the edit and delete buttons
@@ -96,6 +96,15 @@ function addClick() {
                 taskDate.contentEditable = "false";
                 taskPriority.contentEditable = "false";
 
+                // Make the edit button's shadow orange when the mouse is over it and remove the shadow when the mouse leaves it
+                taskEdit.addEventListener("mouseenter", () => {
+                    taskEdit.style.boxShadow = "#f5a52a 0 2px 10px";
+                });
+
+                taskEdit.addEventListener("mouseleave", () => {
+                    taskEdit.style.boxShadow = "none";
+                });
+
                 // Change the save button back to an edit button and change its background color
                 taskEdit.innerHTML = '<i class="fas fa-pencil"></i>';
                 taskEdit.style.backgroundImage = "linear-gradient( 178.1deg,  rgba(246,199,34,1) 13%, rgba(245,149,33,1) 86.3% )";
@@ -108,6 +117,15 @@ function addClick() {
                 // Change the edit button to a save button and change its background color
                 taskEdit.innerHTML = '<i class="fas fa-save"></i>';
                 taskEdit.style.backgroundImage = "linear-gradient(90deg, #9ebd13 0%, #008552 100%)";
+
+                // Make the edit button's shadow green when the mouse is over it and remove the shadow when the mouse leaves it
+                taskEdit.addEventListener("mouseenter", () => {
+                    taskEdit.style.boxShadow = "#008631 0 2px 10px";
+                });
+
+                taskEdit.addEventListener("mouseleave", () => {
+                    taskEdit.style.boxShadow = "none";
+                });
             }
         });
 
