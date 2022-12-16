@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do by Allo</title>
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="scrollbar.css">
     <link rel="stylesheet" href="tasks.css">
     <script type="text/javascript" src="clock.js" defer></script>
     <script type="text/javascript" src="buttons.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <!-- Begin top bar -->
     <fieldset class="clock-container-container flip">
@@ -47,7 +51,14 @@
     </div>
 
     <main>
-        <h1>Tasks:</h1>
+        <div id="task-description">
+            <span>Name</span>
+            <span>Date</span>
+            <span>Priority</span>
+            <span>Due</span>
+            <span>Time left</span>
+            <span>Actions</span>
+        </div>
         <div id="tasks-container">
             <div class="task">
                 <p class="task-name">Test Task</p>
@@ -64,8 +75,9 @@
 
     </main>
     <!-- End task list -->
-    
+
     <!-- End main content -->
 
 </body>
+
 </html>

@@ -5,7 +5,7 @@
  * For every added edit and delete button, an event listener is added, which
  * checks if the button was clicked and apply their respective functions to the 
  * task they are in. 
- **/ 
+ **/
 
 // Get the buttons from the HTML file and store them in variables
 // This is needed to create a new task
@@ -41,6 +41,24 @@ function addClick() {
         newTaskDate.innerText = new Date().toLocaleDateString();
         newTask.appendChild(newTaskDate);
 
+        // Add a default priority to the new task (medium by default and changeable by the user later)
+        const newTaskPriority = document.createElement("p");
+        newTaskPriority.classList.add("task-priority");
+        newTaskPriority.innerText = "Medium";
+        newTask.appendChild(newTaskPriority);
+
+        // Add a default due date to the new task (1 week from now by default and changeable by the user later)
+        const newTaskDueDate = document.createElement("p");
+        newTaskDueDate.classList.add("task-due");
+        newTaskDueDate.innerText = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString();
+        newTask.appendChild(newTaskDueDate);
+
+        // Add the time, that is left until the due date TODO!!!!!!!!
+        const newTaskTimeLeft = document.createElement("p");
+        newTaskTimeLeft.classList.add("task-time-left");
+        //newTaskTimeLeft.innerText = "1 week";
+        newTask.appendChild(newTaskTimeLeft);
+
         // Add the span, that contains the edit and delete buttons
         const newButtonsSpan = document.createElement("span");
         newButtonsSpan.classList.add("delete-and-edit");
@@ -58,8 +76,9 @@ function addClick() {
             // Get the task that was clicked
             const thisTask = document.getElementById(newTask.id);
 
-            // Get the task name and date and edit button
+            // Get the task name, priority, date and edit button
             const taskName = document.getElementById(thisTask.id).querySelector(".task-name");
+            const taskPriority = document.getElementById(thisTask.id).querySelector(".task-priority");
             const taskDate = document.getElementById(thisTask.id).querySelector(".task-date");
             const taskEdit = document.getElementById(thisTask.id).querySelector(".edit-button");
 
@@ -75,6 +94,7 @@ function addClick() {
                 // Make the task name and date uneditable
                 taskName.contentEditable = "false";
                 taskDate.contentEditable = "false";
+                taskPriority.contentEditable = "false";
 
                 // Change the save button back to an edit button and change its background color
                 taskEdit.innerHTML = '<i class="fas fa-pencil"></i>';
@@ -83,6 +103,7 @@ function addClick() {
                 // Make the task name and date editable
                 taskName.contentEditable = "true";
                 taskDate.contentEditable = "true";
+                taskPriority.contentEditable = "true";
 
                 // Change the edit button to a save button and change its background color
                 taskEdit.innerHTML = '<i class="fas fa-save"></i>';

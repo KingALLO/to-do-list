@@ -1,13 +1,13 @@
 #add-container {
     height: 100%;
-    background: rgba( 30, 29, 29, 0.15 );
+    background: rgba(30, 29, 29, 0.15);
 
     box-shadow: 0 8px 32px 0 rgba(0, 1, 2, 0.3);
     backdrop-filter: blur(6px);
     border-radius: 12px;
-    border: 1px solid rgba( 255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
-    display: flex; 
+    display: flex;
     align-items: center;
 
     margin: 18px;
@@ -53,8 +53,9 @@
 }
 
 #newtask-button:hover {
-  transform: translateY(-2px);
-  box-shadow: #3c4fe0 0 2px 10px; /* color x y blur spread */
+    transform: translateY(-2px);
+    box-shadow: #3c4fe0 0 2px 10px;
+    /* color x y blur spread */
 }
 
 #newtask-button:active {
@@ -67,11 +68,11 @@
  *  TODO: , a due date, time left till due date and a delete button
 */
 .task {
-    background: rgba( 30, 29, 29, 0.15 );
+    background: rgba(30, 29, 29, 0.15);
     box-shadow: 0 8px 32px 0 rgba(0, 1, 2, 0.3);
     backdrop-filter: blur(6px);
     border-radius: 12px;
-    border: 1px solid rgba( 255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     display: flex;
     align-items: center;
@@ -128,7 +129,7 @@
     font-weight: 600;
     width: 3.5rem;
 
-    background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, #ec366e 100.2% );
+    background-image: linear-gradient(68.3deg, rgba(245, 177, 97, 1) 0.4%, #ec366e 100.2%);
     color: #fff;
 
     padding: 10px;
@@ -141,8 +142,9 @@
 }
 
 .delete-button:hover {
-  transform: translateY(-2px);
-  box-shadow: #ec4b36 0 2px 10px; /* color x y blur spread */
+    transform: translateY(-2px);
+    box-shadow: #ec4b36 0 2px 10px;
+    /* color x y blur spread */
 }
 
 .delete-button:active {
@@ -155,7 +157,7 @@
     font-weight: 600;
     width: 3.5rem;
 
-    background-image: linear-gradient( 178.1deg,  rgba(246,199,34,1) 13%, rgba(245,149,33,1) 86.3% );
+    background-image: linear-gradient(178.1deg, rgba(246, 199, 34, 1) 13%, rgba(245, 149, 33, 1) 86.3%);
     color: #fff;
 
     padding: 10px;
@@ -168,8 +170,9 @@
 }
 
 .edit-button:hover {
-  transform: translateY(-2px);
-  box-shadow: #f5a52a 0 2px 10px; /* color x y blur spread */
+    transform: translateY(-2px);
+    box-shadow: #f5a52a 0 2px 10px;
+    /* color x y blur spread */
 }
 
 .edit-button:active {
@@ -177,29 +180,65 @@
     transform: translateY(2px);
 }
 
-@media screen and (max-width:768px){
-    .task-date, .task-priority, .task-due {
+#task-description {
+    font-size: 12pt;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+
+    background: rgba(30, 29, 29, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 1, 2, 0.3);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    display: flex;
+    align-items: center;
+
+    margin: 18px;
+    gap: 10px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    justify-content: space-between;
+}
+
+@media screen and (max-width:768px) {
+
+    .task-date,
+    .task-priority,
+    .task-due {
         display: none;
     }
+
     .delete-and-edit {
         gap: 5px;
     }
-    .delete-button, .edit-button {
+
+    .delete-button,
+    .edit-button {
         width: 2.5rem;
         font-size: 14pt;
     }
-    .task-name, .task-time-left {
+
+    .task-name,
+    .task-time-left {
         font-size: 12pt;
     }
-    .task, #add-container, .clock-container-container {
+
+    .task,
+    #add-container,
+    .clock-container-container {
         margin: 0;
         border-radius: 0;
         border-left: none;
         border-right: none;
     }
+
     #fieldset-blur {
         border-radius: 0;
     }
+
     #clock-container {
         display: none;
     }
