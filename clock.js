@@ -1,12 +1,9 @@
+const add0 = (n) => (n < 10 ? "0" + n : n);
+
+// This function inserts the current time into the clock element
 function currentTime() {
     let day = new Date();
-    let hour = day.getHours();
-    let min = day.getMinutes();
-    let sec = day.getSeconds();
-    if (hour < 10) hour = "0" + hour;
-    if (min < 10) min = "0" + min;
-    if (sec < 10) sec = "0" + sec;
-    let time = hour + ":" + min + ":" + sec;
-    document.getElementById("clock").innerHTML = time;
+    document.getElementById("clock").innerHTML = 
+    `${add0(day.getHours())}:${add0(day.getMinutes())}:${add0(day.getSeconds())}`;
 }
 setInterval(currentTime, 1000);

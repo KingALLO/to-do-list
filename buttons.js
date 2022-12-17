@@ -13,8 +13,8 @@ const addButton = document.getElementById("newtask-button");
 const taskContainer = document.getElementById("tasks-container");
 const taskInput = document.getElementById("newtask-input");
 
-// Edit Button attributes
-const editButton = document.getElementsByClassName("edit-button");
+// Get the chosen date, from the date picker, and store it in a variable
+const dateInput = document.getElementById('newtask-date');
 
 addButton.addEventListener("click", () => {
     addClick();
@@ -23,41 +23,45 @@ addButton.addEventListener("click", () => {
 function addClick() {
     // Check if the input box is empty
     if (taskInput.value.length) {
+        let task = {
+            name: taskInput.value,
+        }
+        // Hole den Wert des Eingabefelds als ISO-8601-Zeichenfolge
+        var isoString = dateInput.value; // z.B. "2022-12-17T12:00"
+
+        console.log("isostring: " + isoString);
+
+        // Wandle die ISO-Zeichenfolge in ein Date-Objekt um
+        var date = new Date(isoString);
+
+        // Wandle das Date-Objekt in das gewünschte Format um
+        var day = ('0' + date.getDate()).slice(-2);
+        var month = ('0' + (date.getMonth() + 1)).slice(-2); // Monate sind 0-basiert
+        var year = date.getFullYear();
+        var hours = ('0' + date.getHours()).slice(-2);
+        var minutes = ('0' + date.getMinutes()).slice(-2);
+
+        // Erstelle das gewünschte Datumsformat
+        var formattedDate = day + '.' + month + '.' + year + ' ' + hours + ':' + minutes;
+
+        // Edit Button attributes
+        const editButton = document.getElementsByClassName("edit-button");
+
         // Create a new task
         const newTask = document.createElement("div");
+
+        newTask.innerHTML = `
+        <p class="task-name">${task.name}</p>
+        <p class="task-date">${new Date().toLocaleDateString()}</p>
+        <p class="task-priority">Medium</p>
+        <p class="task-due">${formattedDate}</p>
+        <p class="task-time-left">Time Left</p>
+        `;
+
         newTask.classList.add("task");
-        newTask.id = "task-" + Date.now(); // Add a unique id to the new task (to be used in the edit function)
+        // Add a unique id to the new task (to be used in the edit and delete function)
+        newTask.id = "task-" + Date.now();
         taskContainer.appendChild(newTask);
-
-        // Add the text value from the input box to the new task
-        const newTaskName = document.createElement("p");
-        newTaskName.classList.add("task-name");
-        newTaskName.innerText = taskInput.value;
-        newTask.appendChild(newTaskName);
-
-        // Add a date to the new task
-        const newTaskDate = document.createElement("p");
-        newTaskDate.classList.add("task-date");
-        newTaskDate.innerText = new Date().toLocaleDateString();
-        newTask.appendChild(newTaskDate);
-
-        // Add a default priority to the new task (medium by default and changeable by the user later)
-        const newTaskPriority = document.createElement("p");
-        newTaskPriority.classList.add("task-priority");
-        newTaskPriority.innerText = "Medium";
-        newTask.appendChild(newTaskPriority);
-
-        // Add a default due date to the new task (1 week from now by default and changeable by the user later)
-        const newTaskDueDate = document.createElement("p");
-        newTaskDueDate.classList.add("task-due");
-        newTaskDueDate.innerText = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString();
-        newTask.appendChild(newTaskDueDate);
-
-        // Add the time, that is left until the due date TODO!!!!!!!!
-        const newTaskTimeLeft = document.createElement("p");
-        newTaskTimeLeft.classList.add("task-time-left");
-        newTaskTimeLeft.innerText = "1 week";
-        newTask.appendChild(newTaskTimeLeft);
 
         // Add the span, that contains the edit and delete buttons
         const newButtonsSpan = document.createElement("span");
@@ -79,7 +83,7 @@ function addClick() {
             // Get the task name, priority, date and edit button
             const taskName = document.getElementById(thisTask.id).querySelector(".task-name");
             const taskPriority = document.getElementById(thisTask.id).querySelector(".task-priority");
-            const taskDate = document.getElementById(thisTask.id).querySelector(".task-date");
+            const taskDue = document.getElementById(thisTask.id).querySelector(".task-due");
             const taskEdit = document.getElementById(thisTask.id).querySelector(".edit-button");
 
             // Check the current value of the contentEditable attribute
@@ -93,7 +97,7 @@ function addClick() {
 
                 // Make the task name and date uneditable
                 taskName.contentEditable = "false";
-                taskDate.contentEditable = "false";
+                taskDue.contentEditable = "false";
                 taskPriority.contentEditable = "false";
 
                 // Make the edit button's shadow orange when the mouse is over it and remove the shadow when the mouse leaves it
@@ -111,7 +115,7 @@ function addClick() {
             } else {
                 // Make the task name and date editable
                 taskName.contentEditable = "true";
-                taskDate.contentEditable = "true";
+                taskDue.contentEditable = "true";
                 taskPriority.contentEditable = "true";
 
                 // Change the edit button to a save button and change its background color

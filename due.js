@@ -21,12 +21,6 @@ function timeLeft() {
     // Build the time string
     let time = `${daysString} days ${hoursString} hours ${minutesString} minutes ${secondsString} seconds`;
 
-// q: Was macht das $ Zeichen?
-// a: Das $ Zeichen ist ein Template Literal, das es ermöglicht, Variablen in Strings einzufügen.
-
-// q: Irgendein Beispiel? 
-// a: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-
     // Update the time left element
     document.getElementById(thisTask.id).querySelector(".task-time-left").innerHTML = time;
 }

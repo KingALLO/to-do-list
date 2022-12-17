@@ -63,6 +63,25 @@
     transform: translateY(2px);
 }
 
+#newtask-date {
+    padding: 5px;
+    width: 350px;
+    background: rgba(177, 176, 176, 0.15);
+    color: #fff;
+    font-size: 16pt;
+    font-weight: 700;
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+input[type="datetime-local" i]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
 /*
  *  Contains a task with a name
  *  TODO: , a due date, time left till due date and a delete button
@@ -84,6 +103,10 @@
     padding-right: 20px;
 
     justify-content: space-between;
+}
+
+.task:first-child {
+    margin-top: 4px;
 }
 
 .task-name {
@@ -195,6 +218,7 @@
     align-items: center;
 
     margin: 18px;
+    margin-bottom: 0;
     gap: 10px;
 
     padding-left: 20px;
