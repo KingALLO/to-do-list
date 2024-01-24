@@ -20,6 +20,20 @@ addButton.addEventListener("click", () => {
     addClick();
 });
 
+function getTimeLeft(dueDate) {
+    const now = new Date();
+    const diffInMilliseconds = dueDate - now;
+    if (diffInMilliseconds < 0) {
+        return "Overdue";
+    }
+    const diffInMinutes = Math.floor(diffInMilliseconds / 60000);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    return `${diffInDays}d:${diffInHours % 24}h:${diffInMinutes % 60}m`;
+}
+
+var date = new Date(isoString);
+
 function addClick() {
     // Check if the input box is empty
     if (taskInput.value.length) {
@@ -55,7 +69,7 @@ function addClick() {
         <p class="task-date">${new Date().toLocaleDateString()}</p>
         <p class="task-priority">Medium</p>
         <p class="task-due">${formattedDate}</p>
-        <p class="task-time-left">Time Left</p>
+        <p class="task-time-left">${getTimeLeft(date)}</p>
         `;
 
         newTask.classList.add("task");
@@ -132,6 +146,11 @@ function addClick() {
                 });
             }
         });
+
+        setInterval(() => {
+            const timeLeftElement = newTask.querySelector('.task-time-left');
+            timeLeftElement.textContent = getTimeLeft(date);
+        }, 60000);
 
         // Add a delete button to the span
         const newTaskDelete = document.createElement("button");
